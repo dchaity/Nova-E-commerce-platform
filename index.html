@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA · Premium E-Commerce</title>
+  <!-- Google Fonts (Inter) & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <p>✨ Discover your next favorite find — shop the NOVA collection. Free shipping over $100.</p>
+  </div>
+
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo" id="logoHome">NOVA</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#" data-nav="home">Home</a>
+        <a href="#catalog" data-nav="shop">Shop</a>
+        <a href="#categories" data-nav="categories">Categories</a>
+        <a href="#about" data-nav="about">About</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn search-toggle" id="searchToggle" aria-label="Search">
+          <i data-lucide="search"></i>
+        </button>
+        <button class="icon-btn cart-toggle" id="cartToggle" aria-label="Shopping cart">
+          <i data-lucide="shopping-bag"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile dropdown (hidden by default) -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#" data-nav="home">Home</a>
+      <a href="#catalog" data-nav="shop">Shop</a>
+      <a href="#categories" data-nav="categories">Categories</a>
+      <a href="#about" data-nav="about">About</a>
+    </div>
+  </header>
+
+  <!-- Search overlay (simple) -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <input type="text" id="searchInputOverlay" placeholder="Search products..." aria-label="Search products">
+      <button class="icon-btn" id="closeSearchBtn" aria-label="Close search"><i data-lucide="x"></i></button>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">THE NOVA COLLECTION</span>
+        <h1>Find Something<br>Extraordinary.</h1>
+        <p>Explore everyday essentials, standout accessories, and thoughtful finds curated for your lifestyle.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" id="shopCollectionBtn">Shop Collection</button>
+          <button class="btn btn-secondary" id="exploreCategoriesBtn">Explore Categories</button>
+        </div>
+      </div>
+      <div class="hero-collage" id="heroCollage">
+        <!-- Images injected via JS from API (featured products) -->
+      </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories-section" id="categories">
+      <div class="section-header">
+        <h2>Shop by Category</h2>
+        <p>Curated collections for every aspect of your life.</p>
+      </div>
+      <div class="categories-grid" id="categoriesGrid">
+        <!-- Dynamically injected via JS for interactive filtering -->
+      </div>
+    </section>
+
+    <!-- Product Catalog -->
+    <section class="catalog-section" id="catalog">
+      <div class="section-header">
+        <h2>Explore Our Collection</h2>
+        <p id="productCountDisplay">Loading products...</p>
+      </div>
+
+      <!-- Product Toolbar -->
+      <div class="product-toolbar">
+        <div class="search-box">
+          <i data-lucide="search"></i>
+          <input type="text" id="searchInput" placeholder="Search products..." aria-label="Search products">
+        </div>
+        <div class="filter-group" id="categoryFilters">
+          <!-- Filter buttons injected by JS -->
+        </div>
+        <div class="sort-group">
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Rating: Highest First</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+          <button class="btn-clear" id="clearFiltersBtn">Clear</button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Product cards rendered by JS -->
+      </div>
+
+      <!-- Empty / Error states -->
+      <div id="catalogMessage" class="catalog-message hidden">
+        <p id="messageText"></p>
+        <button class="btn btn-primary" id="retryBtn">Retry</button>
+      </div>
+    </section>
+
+    <!-- About / Trust Section -->
+    <section class="trust-section" id="about">
+      <div class="section-header">
+        <h2>Why Shop with NOVA</h2>
+        <p>Thoughtfully designed for a seamless experience.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <i data-lucide="shopping-bag"></i>
+          <h3>Easy Shopping</h3>
+          <p>Discover products in one convenient place with intuitive search and filtering.</p>
+        </div>
+        <div class="trust-card">
+          <i data-lucide="receipt"></i>
+          <h3>Transparent Pricing</h3>
+          <p>Clear subtotal, estimated tax, and shipping — no surprises at checkout.</p>
+        </div>
+        <div class="trust-card">
+          <i data-lucide="monitor-smartphone"></i>
+          <h3>Responsive Experience</h3>
+          <p>Enjoy a seamless interface on any device, from mobile to desktop.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+      <div class="newsletter-content">
+        <h2>Stay in the Loop</h2>
+        <p>Sign up for updates on new arrivals and exclusive offers. (Demo only — no emails are sent.)</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <div id="newsletterFeedback" class="newsletter-feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo">NOVA</span>
+        <p>Premium finds for everyday living. Curated with care.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Shop</h4>
+          <a href="#catalog" data-category="all">All Products</a>
+          <a href="#catalog" data-category="electronics">Electronics</a>
+          <a href="#catalog" data-category="jewelery">Jewelry</a>
+          <a href="#catalog" data-category="men's clothing">Men's Clothing</a>
+          <a href="#catalog" data-category="women's clothing">Women's Clothing</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#about">About</a>
+          <a href="#catalog">Shop</a>
+          <a href="#categories">Categories</a>
+        </div>
+        <div>
+          <h4>Demo Project</h4>
+          <p class="footer-note">This is a frontend demonstration using FakeStoreAPI. No real transactions.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="copyrightYear"></span> NOVA. Demo project — not a real store.</p>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h3>Your Cart (<span id="cartItemCount">0</span>)</h3>
+      <button class="icon-btn" id="closeCartBtn" aria-label="Close cart"><i data-lucide="x"></i></button>
+    </div>
+    <div class="cart-items" id="cartItemsList">
+      <!-- Cart items injected -->
+    </div>
+    <div class="cart-summary" id="cartSummary">
+      <div class="summary-row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+      <div class="summary-row"><span>Estimated Tax (8%)</span><span id="tax">$0.00</span></div>
+      <div class="summary-row"><span>Shipping</span><span id="shipping">$0.00</span></div>
+      <div class="summary-row total"><span>Total</span><span id="total">$0.00</span></div>
+      <button class="btn btn-primary checkout-btn" id="checkoutBtn">Checkout</button>
+      <button class="btn btn-secondary continue-btn" id="continueShoppingBtn">Continue Shopping</button>
+    </div>
+  </div>
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+
+  <!-- Quick View Modal -->
+  <div class="modal" id="quickViewModal" aria-hidden="true">
+    <div class="modal-content quick-view-content" id="quickViewContent">
+      <!-- Dynamic content -->
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal-content checkout-content" id="checkoutContent">
+      <!-- Dynamic content -->
+    </div>
+  </div>
+
+  <!-- Toast notifications -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
