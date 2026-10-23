@@ -2,7 +2,7 @@
 
 A complete, professional, and fully functional e-commerce frontend built with **HTML5, CSS3, and Vanilla JavaScript**. NOVA delivers a polished shopping experience with product discovery, category filtering, search, sorting, a persistent cart, quantity controls, accurate price calculations, and a simulated checkout process — all powered by live data from **FakeStoreAPI**.
 
-> **Live Demo:** Deploy this project to GitHub Pages, Netlify, or Vercel in minutes.
+> **Live Demo:** https://dchaity.github.io/Nova-E-commerce-platform/
 
 ---
 
